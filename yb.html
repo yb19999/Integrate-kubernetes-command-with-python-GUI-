@@ -1,0 +1,67 @@
+<body bgcolor="yellow">
+<center>
+<style>
+body 
+{
+background-image : url('docker.png');
+background-size: cover;
+}
+
+div
+{
+color: yellow;
+}
+
+button
+{
+color:black;
+height:60px;
+width:100px;
+
+}
+
+
+
+</style>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+<h2>
+<!-- <a href='http://192.168.0.106/cgi-bin/y.py'> click me <a> -->
+<script		>
+function yb()
+{
+
+var i = document.getElementById("in1").value
+var xhr = new XMLHttpRequest();
+//xhr.onload
+xhr.open("GET","http://192.168.0.103/cgi-bin/y.py?x="+i	,true);
+xhr.send();
+//output from above url
+
+
+xhr.onload = function() 
+{		
+var output = xhr.responseText;
+document.getElementById("d1").innerHTML = output;
+}
+}
+</script> 
+<br>
+<br>
+<div>
+[root@localhost ~]# <input type="text" id="in1" color='black' ><br>
+</div>
+
+<h1>
+<pre>
+<div id="d1" > <h3><b>here is the output.... </b></h3></div>
+</pre>
+</h1>
+<!--
+<div id="d2" onclick="alert('hi');">div 2 </div>
+-->
+<button onclick="yb();">click me </button>
+
+</h2>
+</center>
+</body>
